@@ -18,9 +18,9 @@
 #X obj 660 86 osc~;
 #X text 56 22 Efeito Chorus/Flanger;
 #X obj 663 53 hsl 200 15 0.1 20 1 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4800 1;
+-1 -1 6400 1;
 #X obj 1077 86 hsl 128 15 1 100 1 0 empty empty empty -2 -8 0 10 -262144
--1 -1 7200 1;
+-1 -1 2600 1;
 #X text 1073 40 depth;
 #X obj 659 145 expr~ $v1*$f2 + $f2;
 #X text 659 5 ratio;
