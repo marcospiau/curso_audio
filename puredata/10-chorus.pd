@@ -1,0 +1,48 @@
+#N canvas 0 22 1246 747 36;
+#X obj 54 207 readsf~;
+#X msg 110 140 start;
+#X obj 54 363 delwrite~ \$0-delay 5000;
+#X obj 260 544 *~;
+#X obj 528 552 *~;
+#X obj 323 419 vsl 15 30 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2900 1;
+#X obj 323 473 dbtorms;
+#X text 339 539 dry;
+#X text 608 545 wet;
+#X obj 591 419 vsl 15 30 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2900 1;
+#X obj 591 473 dbtorms;
+#X obj 257 621 +~;
+#X obj 239 686 dac~;
+#X obj 539 206 vd~ \$0-delay;
+#X obj 660 86 osc~;
+#X text 56 22 Efeito Chorus/Flanger;
+#X obj 663 53 hsl 200 15 0.1 20 1 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4800 1;
+#X obj 1077 86 hsl 128 15 1 100 1 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 7200 1;
+#X text 1073 40 depth;
+#X obj 659 145 expr~ $v1*$f2 + $f2;
+#X text 659 5 ratio;
+#X floatatom 763 87 5 0 0 0 - - -;
+#X floatatom 1100 146 5 0 0 0 - - -;
+#X msg 54 78 open ../audio/bbking.wav;
+#X connect 0 0 2 0;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 3 0 11 0;
+#X connect 4 0 11 1;
+#X connect 5 0 6 0;
+#X connect 6 0 3 1;
+#X connect 9 0 10 0;
+#X connect 10 0 4 1;
+#X connect 11 0 12 0;
+#X connect 11 0 12 1;
+#X connect 13 0 4 0;
+#X connect 14 0 19 0;
+#X connect 16 0 14 0;
+#X connect 16 0 21 0;
+#X connect 17 0 19 1;
+#X connect 17 0 22 0;
+#X connect 19 0 13 0;
+#X connect 23 0 0 0;
