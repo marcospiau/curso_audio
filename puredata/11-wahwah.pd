@@ -1,0 +1,47 @@
+#N canvas 0 22 1031 660 36;
+#X obj 64 217 readsf~;
+#X msg 120 150 start;
+#X obj 270 554 *~;
+#X obj 538 562 *~;
+#X obj 333 429 vsl 15 30 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2400 1;
+#X obj 333 483 dbtorms;
+#X text 349 549 dry;
+#X text 618 555 wet;
+#X obj 601 429 vsl 15 30 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2900 1;
+#X obj 601 483 dbtorms;
+#X obj 267 631 +~;
+#X obj 249 696 dac~;
+#X obj 349 232 osc~;
+#X obj 352 199 hsl 200 15 0.1 50 1 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 10400 1;
+#X obj 766 232 hsl 128 15 50 5000 1 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 9900 1;
+#X obj 348 291 expr~ $v1*$f2 + $f2;
+#X text 348 151 ratio;
+#X floatatom 452 233 5 0 0 0 - - -;
+#X floatatom 789 292 5 0 0 0 - - -;
+#X text 66 32 Efeito Wah-wah;
+#X obj 363 356 vcf~ 10 10;
+#X msg 64 88 open ../audio/clean.wav;
+#X text 762 186 depth;
+#X connect 0 0 2 0;
+#X connect 0 0 20 0;
+#X connect 1 0 0 0;
+#X connect 2 0 10 0;
+#X connect 3 0 10 1;
+#X connect 4 0 5 0;
+#X connect 5 0 2 1;
+#X connect 8 0 9 0;
+#X connect 9 0 3 1;
+#X connect 10 0 11 0;
+#X connect 10 0 11 1;
+#X connect 12 0 15 0;
+#X connect 13 0 12 0;
+#X connect 13 0 17 0;
+#X connect 14 0 15 1;
+#X connect 14 0 18 0;
+#X connect 15 0 20 1;
+#X connect 20 0 3 0;
+#X connect 21 0 0 0;
