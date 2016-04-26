@@ -1,0 +1,30 @@
+#N canvas 6 24 1265 741 36;
+#X text 34 10 Síntese AM;
+#X text 34 73 cos(f) * cos(g) = 0.5 [ cos(f-g) + cos(f+g) ];
+#X obj 52 302 osc~;
+#X obj 393 254 osc~;
+#X obj 55 163 hsl 300 15 20 120 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 17200 1;
+#X obj 52 184 mtof;
+#X floatatom 168 188 5 0 0 0 - - -;
+#X obj 504 157 hsl 500 15 0 200 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 700 1;
+#X obj 393 339 *~;
+#X obj 519 264 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3600 1;
+#X obj 54 410 *~;
+#X obj 42 598 dac~;
+#X floatatom 594 195 5 0 0 0 - - -;
+#X floatatom 71 244 5 0 0 0 - - -;
+#X connect 2 0 10 0;
+#X connect 3 0 8 0;
+#X connect 4 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 2 0;
+#X connect 5 0 13 0;
+#X connect 7 0 3 0;
+#X connect 7 0 12 0;
+#X connect 8 0 10 1;
+#X connect 9 0 8 1;
+#X connect 10 0 11 0;
+#X connect 10 0 11 1;

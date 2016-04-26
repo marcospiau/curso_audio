@@ -1,0 +1,39 @@
+#N canvas 0 22 1175 734 36;
+#X text 56 22 Sampler;
+#X obj 54 207 readsf~;
+#X msg 54 78 open ../audio/piano.wav;
+#X obj 86 612 dac~;
+#X msg 110 140 start;
+#X obj 55 337 demux~;
+#X obj 360 292 lop~;
+#X obj 360 386 hip~;
+#X obj 458 258 hsl 128 15 20 20000 1 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 12700 1;
+#X floatatom 470 296 10 0 0 0 - - -;
+#X obj 458 349 hsl 128 15 20 20000 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 1100 1;
+#X floatatom 470 387 10 0 0 0 - - -;
+#X obj 528 439 hsl 128 15 20 20000 1 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 11000 1;
+#X floatatom 550 477 10 0 0 0 - - -;
+#X obj 360 477 bp~ 1 3;
+#X obj 88 290 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 355 184 Transformacoes lineares;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 3 0;
+#X connect 5 0 3 1;
+#X connect 5 1 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 14 0;
+#X connect 8 0 6 1;
+#X connect 8 0 9 0;
+#X connect 10 0 11 0;
+#X connect 10 0 7 1;
+#X connect 12 0 13 0;
+#X connect 12 0 14 1;
+#X connect 14 0 3 0;
+#X connect 14 0 3 1;
+#X connect 15 0 5 0;

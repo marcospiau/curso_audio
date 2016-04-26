@@ -1,0 +1,45 @@
+#N canvas 0 22 1237 740 36;
+#X obj 44 197 readsf~;
+#X msg 100 130 start;
+#X msg 44 68 open ../audio/bbking.wav;
+#X obj 44 353 delwrite~ \$0-delay 5000;
+#X obj 529 196 delread~ \$0-delay;
+#X obj 250 534 *~;
+#X obj 518 542 *~;
+#X obj 313 409 vsl 15 30 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2400 1;
+#X obj 313 463 dbtorms;
+#X text 329 529 dry;
+#X text 598 535 wet;
+#X obj 581 409 vsl 15 30 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1800 1;
+#X obj 581 463 dbtorms;
+#X obj 559 138 hsl 128 15 50 1000 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 6700 1;
+#X text 698 114 delay (ms);
+#X obj 247 611 +~;
+#X obj 229 676 dac~;
+#X text 46 12 Efeito Echo/Reverb;
+#X obj 254 272 *~;
+#X obj 254 147 vsl 15 30 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2100 1;
+#X obj 254 201 dbtorms;
+#X text 333 267 feedback;
+#X connect 0 0 3 0;
+#X connect 0 0 5 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 4 0 6 0;
+#X connect 4 0 18 1;
+#X connect 5 0 15 0;
+#X connect 6 0 15 1;
+#X connect 7 0 8 0;
+#X connect 8 0 5 1;
+#X connect 11 0 12 0;
+#X connect 12 0 6 1;
+#X connect 13 0 4 0;
+#X connect 15 0 16 0;
+#X connect 15 0 16 1;
+#X connect 18 0 3 0;
+#X connect 19 0 20 0;
+#X connect 20 0 18 0;
